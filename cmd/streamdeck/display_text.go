@@ -66,6 +66,7 @@ func (d displayElementText) Display(ctx context.Context, idx int, attributes att
 	}
 
 	if strings.TrimSpace(attributes.Text) != "" {
+		// this is probably where we want to inject the font setting
 		if err = imgRenderer.DrawBigText(strings.TrimSpace(attributes.Text), fontsize, border, textColor); err != nil {
 			return errors.Wrap(err, "Unable to render text")
 		}

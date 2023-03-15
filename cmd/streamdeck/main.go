@@ -9,6 +9,9 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/BurntSushi/xgbutil"
+	"github.com/BurntSushi/xgbutil/ewmh"
+	"github.com/BurntSushi/xgbutil/icccm"
 	"github.com/Luzifer/rconfig/v2"
 	"github.com/Luzifer/streamdeck"
 	"github.com/fsnotify/fsnotify"
@@ -65,6 +68,38 @@ func init() {
 	}
 }
 
+func getActiveWindowClass(X *xgbutil.XUtil) string {
+	activeWindow, err := ewmh.ActiveWindowGet(X)
+	if err != nil {
+		return "default"
+	}
+	class, err := icccm.WmClassGet(X, activeWindow)
+	if err != nil {
+		log.Fatal(err)
+	}
+	return class.Class
+}
+
+func pollForClassChange() <-chan string {
+	output := make(chan string)
+	go func() {
+		X, err := xgbutil.NewConn()
+		if err != nil {
+			log.Fatal(err)
+		}
+		currentClass := getActiveWindowClass(X)
+		output <- currentClass
+		for {
+			newClass := getActiveWindowClass(X)
+			if newClass != currentClass {
+				currentClass = newClass
+				output <- currentClass
+			}
+		}
+	}()
+	return output
+}
+
 func main() {
 	if cfg.List {
 		listAndQuit()
@@ -111,6 +146,9 @@ func main() {
 
 	// Initial setup
 
+	// must be done before signal installation
+	classPoll := pollForClassChange()
+
 	sigs := make(chan os.Signal)
 	signal.Notify(sigs, syscall.SIGHUP, syscall.SIGINT, syscall.SIGTERM)
 
@@ -120,10 +158,6 @@ func main() {
 		log.WithError(err).Fatal("Unable to set brightness")
 	}
 	currentBrightness = userConfig.DefaultBrightness
-
-	if err = togglePage(userConfig.DefaultPage); err != nil {
-		log.WithError(err).Error("Unable to load default page")
-	}
 
 	var offTimer *time.Timer = &time.Timer{}
 	if userConfig.DisplayOffTime > 0 {
@@ -198,6 +232,12 @@ func main() {
 					continue
 				}
 			}
+		case evt := <-classPoll:
+			if _, ok := userConfig.Pages[evt]; ok {
+				nextPage := evt
+				togglePage(nextPage)
+			}
+			continue
 
 		case <-sigs:
 			return
