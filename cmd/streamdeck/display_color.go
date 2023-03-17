@@ -4,7 +4,7 @@ import (
 	"context"
 	"image/color"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 )
 
 func init() {

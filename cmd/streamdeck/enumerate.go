@@ -7,7 +7,7 @@ import (
 	"strings"
 
 	"github.com/Luzifer/streamdeck"
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	log "github.com/sirupsen/logrus"
 	"github.com/sstallion/go-hid"
 )

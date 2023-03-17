@@ -7,7 +7,7 @@ import (
 	_ "image/png"
 	"strings"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 )
 
 func init() {

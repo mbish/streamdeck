@@ -1,6 +1,6 @@
 package main
 
-import "github.com/pkg/errors"
+import "github.com/friendsofgo/errors"
 
 func init() {
 	registerAction("reload_config", actionReloadConfig{})

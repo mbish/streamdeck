@@ -10,7 +10,7 @@ import (
 	"sync"
 
 	"github.com/disintegration/imaging"
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	"github.com/sstallion/go-hid"
 )
 

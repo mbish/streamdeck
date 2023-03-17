@@ -8,9 +8,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/friendsofgo/errors"
 	"github.com/golang/freetype"
 	"github.com/golang/freetype/truetype"
-	"github.com/pkg/errors"
 	"golang.org/x/image/font"
 	"golang.org/x/image/math/fixed"
 )

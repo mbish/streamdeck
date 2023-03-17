@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	log "github.com/sirupsen/logrus"
 )
 

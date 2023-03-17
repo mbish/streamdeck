@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	"gopkg.in/yaml.v2"
 )
 

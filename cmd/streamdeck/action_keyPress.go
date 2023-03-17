@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	"github.com/sashko/go-uinput"
 )
 

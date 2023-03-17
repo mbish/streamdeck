@@ -3,7 +3,7 @@ package main
 import (
 	"math"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 )
 
 func init() {

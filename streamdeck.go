@@ -4,7 +4,7 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	hid "github.com/sstallion/go-hid"
 )
 

@@ -1,0 +1,27 @@
+schema = 3
+
+[mod]
+  [mod."github.com/BurntSushi/xgb"]
+    version = "v0.0.0-20210121224620-deaf085860bc"
+    hash = "sha256-BOkuWOpYyQcuA+2fvlebJVU07Ts0hYsskCSScM9ozWY="
+  [mod."github.com/BurntSushi/xgbutil"]
+    version = "v0.0.0-20190907113008-ad855c713046"
+    hash = "sha256-klGGuCrpEWONhkL2IG9LIWrsUZhr1CZ53QAmlxVigIo="
+  [mod."github.com/disintegration/imaging"]
+    version = "v1.6.2"
+    hash = "sha256-pSeMTPvSkxlthh65LjNYYhPLvCZDkBgVgAGYWW0Aguo="
+  [mod."github.com/jezek/xgb"]
+    version = "v1.1.0"
+    hash = "sha256-qLbiTgZp/b+4+2LRXgdQRl8B1QsfiGteuNoGBQkI5rI="
+  [mod."github.com/pkg/errors"]
+    version = "v0.8.1"
+    hash = "sha256-oe3iddfoLRwpC3ki5fifHf2ZFprtg99iNak50shiuDw="
+  [mod."github.com/sstallion/go-hid"]
+    version = "v0.0.0-20190621001400-1cf4630be9f4"
+    hash = "sha256-g4YI2Xqu/DsC5IBmO0ArcYrUFDRT6Bmq8uHwxtqZgXU="
+  [mod."golang.org/x/image"]
+    version = "v0.0.0-20191009234506-e7c1f5e7dbb8"
+    hash = "sha256-rnqWpj/Tj8hw1KfiNjHMQCz+v2AQyOVfCxyzqE5C9zM="
+  [mod."golang.org/x/text"]
+    version = "v0.3.0"
+    hash = "sha256-0FFbaxF1ZuAQF3sCcA85e8MO6prFeHint36inija4NY="

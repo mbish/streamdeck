@@ -14,8 +14,8 @@ import (
 	"github.com/BurntSushi/xgbutil/icccm"
 	"github.com/Luzifer/rconfig/v2"
 	"github.com/Luzifer/streamdeck"
+	"github.com/friendsofgo/errors"
 	"github.com/fsnotify/fsnotify"
-	"github.com/pkg/errors"
 	"github.com/sashko/go-uinput"
 	log "github.com/sirupsen/logrus"
 )

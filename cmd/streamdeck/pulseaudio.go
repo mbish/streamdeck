@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package main
@@ -6,9 +7,9 @@ import (
 	"math"
 	"regexp"
 
+	"github.com/friendsofgo/errors"
 	"github.com/jfreymuth/pulse"
 	"github.com/jfreymuth/pulse/proto"
-	"github.com/pkg/errors"
 	log "github.com/sirupsen/logrus"
 )
 

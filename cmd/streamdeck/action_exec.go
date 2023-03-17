@@ -5,7 +5,7 @@ import (
 	"os/exec"
 
 	"github.com/Luzifer/go_helpers/v2/env"
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 )
 
 func init() {

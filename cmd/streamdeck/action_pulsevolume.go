@@ -1,9 +1,10 @@
+//go:build linux
 // +build linux
 
 package main
 
 import (
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 )
 
 func init() {

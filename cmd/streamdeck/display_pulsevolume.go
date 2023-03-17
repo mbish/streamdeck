@@ -1,3 +1,4 @@
+//go:build linux
 // +build linux
 
 package main
@@ -9,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pkg/errors"
+	"github.com/friendsofgo/errors"
 	log "github.com/sirupsen/logrus"
 )
 
