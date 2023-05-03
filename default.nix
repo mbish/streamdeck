@@ -12,7 +12,7 @@
 }:
 
 pkgs.buildGoApplication {
-  pname = "streamdeck-cmd";
+  pname = "streamdeck";
   version = "1.7.0";
   pwd = ./.;
   src = ./cmd/streamdeck;
