@@ -21,8 +21,15 @@
       packages.default = pkgs.buildGoModule rec {
         pname = "streamdeck";
         version = "0.1";
-        src = ./cmd/streamdeck;
-        subpackages = [ "cmd" ];
+        root = ./.;
+        src = nix-filter.lib.filter {
+          root = ./.;
+            include = [
+              "main.go"
+              "go.mod"
+              "go.sum"
+            ];
+        };
         vendorHash = null;
         buildInputs = with pkgs; [
           hidapi

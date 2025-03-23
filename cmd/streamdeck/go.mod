@@ -3,6 +3,7 @@ module github.com/Luzifer/streamdeck/cmd/streamdeck
 go 1.13
 
 require (
+	github.com/BurntSushi/xgb v0.0.0-20210121224620-deaf085860bc // indirect
 	github.com/BurntSushi/xgbutil v0.0.0-20190907113008-ad855c713046
 	github.com/Luzifer/go_helpers v2.8.1+incompatible // indirect
 	github.com/Luzifer/go_helpers/v2 v2.10.0
@@ -22,7 +23,6 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/sstallion/go-hid v0.0.0-20190621001400-1cf4630be9f4
 	golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8
-	golang.org/x/net v0.8.0
 	gopkg.in/validator.v2 v2.0.0-20191107172027-c3144fdedc21 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 )
